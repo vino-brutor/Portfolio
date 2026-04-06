@@ -1,0 +1,114 @@
+/* src/ProjectCard.css */
+:root {
+  --card-bg: #111111;
+  --card-border: #222222;
+  --purple-neon: #a855f7; /* Roxo principal */
+  --text-white: #ffffff;
+  --text-gray: #9ca3af;
+}
+
+.card-link {
+  text-decoration: none; /* Remove sublinhado do link */
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card-link:hover {
+  transform: translateY(-5px); /* Efeito flutuante no hover */
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  overflow: hidden; /* Garante que a imagem não saia das bordas arredondadas */
+  height: 100%; /* Para cards na mesma linha terem mesma altura */
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-link:hover .project-card {
+  border-color: var(--purple-neon);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15); /* Brilho roxo sutil */
+}
+
+/* Área da Imagem */
+.card-image-wrapper {
+  position: relative;
+  height: 200px;
+  width: 100%;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  /* Degradê do transparente para o preto no fundo do texto */
+  background: linear-gradient(to top, rgba(17, 17, 17, 1), rgba(17, 17, 17, 0));
+}
+
+/* Área do Conteúdo */
+.card-content {
+  padding: 1.5rem;
+  flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-header {
+  margin-bottom: 0.75rem;
+}
+
+.card-subtitle {
+  color: var(--purple-neon);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+}
+
+.card-title {
+  color: var(--text-white);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.card-description {
+  color: var(--text-gray);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo dos Badges/Tags */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap; /* Quebra linha se houver muitas tags */
+  gap: 0.5rem;
+}
+
+.tag-badge {
+  background-color: rgba(168, 85, 247, 0.1); /* Roxo bem transparente */
+  color: var(--purple-neon);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
