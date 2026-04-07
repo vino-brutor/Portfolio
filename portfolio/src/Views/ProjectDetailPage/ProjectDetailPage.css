@@ -1,0 +1,148 @@
+/* src/ProjectDetailPage.css */
+.project-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  color: var(--text-white);
+  background-color: #0a0a0a;
+}
+
+.back-button {
+  color: var(--text-gray);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.back-button:hover {
+  color: var(--purple-neon);
+}
+
+/* Cabeçalho */
+.detail-header {
+  margin-bottom: 3rem;
+}
+
+.detail-title {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.detail-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-gray);
+  margin-bottom: 1.5rem;
+}
+
+.detail-tags {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Imagem Principal */
+.detail-main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  margin-bottom: 4rem;
+  border: 1px solid #222;
+}
+
+/* Layout do Conteúdo Main + Sidebar */
+.detail-main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Main ocupa 2/3, sidebar 1/3 */
+  gap: 4rem;
+}
+
+@media (max-width: 768px) {
+  .detail-main-content {
+    grid-template-columns: 1fr; /* Stack no mobile */
+  }
+}
+
+/* Seção da Descrição */
+.description-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.description-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-gray);
+  margin-bottom: 2rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-links a {
+  background-color: #111;
+  color: var(--text-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+}
+
+.project-links a:hover {
+  border-color: var(--purple-neon);
+  background-color: rgba(168, 85, 247, 0.1);
+}
+
+/* Sidebar */
+.detail-sidebar h3 {
+  font-size: 1.25rem;
+  color: var(--purple-neon);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.team-section, .gallery-section {
+  background-color: #111;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #222;
+  margin-bottom: 2rem;
+}
+
+.team-section ul {
+  list-style: none;
+  padding: 0;
+  color: var(--text-gray);
+}
+
+.team-section li {
+  margin-bottom: 0.75rem;
+}
+
+/* Galeria */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #333;
+}
+
+/* Página de Erro */
+.error-page {
+  text-align: center;
+  padding: 10rem;
+  color: white;
+}
+.back-link { color: var(--purple-neon); }

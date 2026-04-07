@@ -1,17 +1,13 @@
 import React from 'react';
 import './App.css'; // Importando o arquivo de estilos
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomePage from '../HomePage/HomePage';
+import ProjectDetailPage from '../ProjectDetailPage/ProjectDetailPage';
 
 const App = () => {
-  const renderGlitcheWord = (word) => {
-    return word.split('').map((char, index) => (  
-        <span key={index} className={"glitch-char glitch-char-" + (index + 1)}>
-          {char}
-        </span>      
-    ))
-  }
-
   return (
-    <div className="portfolio-container">
+    <BrowserRouter>
+      <div className="portfolio-container">
       {/* Navegação */}
       <nav className="navbar">
         <div className="logo">
@@ -29,22 +25,13 @@ const App = () => {
         </button>
       </nav>
 
-      <main className="hero">
-        <div className="hero-text">
-          <p className="subtitle">
-            Desenvolvedor & Estudante de Informática Biomédica
-          </p>
-          
-          <h1 className="title">
-            {renderGlitcheWord("VíTOR")}
-            <br />
-            <span className="neon-text">
-              {renderGlitcheWord("BRUNO")}
-            </span>
-          </h1>
-        </div>        
-      </main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects/:id" element={<ProjectDetailPage />} />
+      </Routes>
+      
     </div>
+    </BrowserRouter>
   );
 };
 

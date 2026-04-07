@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const projectCard = ({ project }) => {
+const ProjectCard = ({ project }) => {
     <Link to={`/projetos/${project.id}`}>
         <div className='project-card'>
             <div className='card-image-wrapper'>
@@ -29,4 +29,4 @@ const projectCard = ({ project }) => {
     </Link>
 }
 
-export default projectCard;
+export default ProjectCard;
