@@ -3,6 +3,7 @@ import './App.css'; // Importando o arquivo de estilos
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from '../HomePage/HomePage';
 import ProjectDetailPage from '../ProjectDetailPage/ProjectDetailPage';
+import linkedinIcon from '../../assets/iconLinkedin.png';
 
 const App = () => {
   return (
@@ -20,9 +21,15 @@ const App = () => {
           <a href="#contato">CONTATO</a>
         </div>
 
-        <button className="resume-btn">
+        <div className='nav-buttons'>
+          <button className="resume-btn">
           CURRÍCULO
-        </button>
+          </button>
+
+          <a href="https://www.linkedin.com/in/vitor-bruno-243975258/" target="_blank" rel="noreferrer">
+            <img src={linkedinIcon} alt="Linkedin" />
+          </a>
+        </div>        
       </nav>
 
       <Routes>

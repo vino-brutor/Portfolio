@@ -95,9 +95,9 @@
 }
 
 /* Estilo dos Badges/Tags */
-.card-tags {
+.div-tags {
   display: flex;
-  flex-wrap: wrap; /* Quebra linha se houver muitas tags */
+  flex-wrap: wrap; 
   gap: 0.5rem;
 }
 
