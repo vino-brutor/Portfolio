@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from '../HomePage/HomePage';
 import ProjectDetailPage from '../ProjectDetailPage/ProjectDetailPage';
 import linkedinIcon from '../../assets/iconLinkedin.png';
+import githubIcon from '../../assets/githubIcon.png';
 
 const App = () => {
   return (
@@ -27,7 +28,11 @@ const App = () => {
           </button>
 
           <a href="https://www.linkedin.com/in/vitor-bruno-243975258/" target="_blank" rel="noreferrer">
-            <img src={linkedinIcon} alt="Linkedin" />
+            <img src={linkedinIcon} alt="Linkedin" className='linkedin-icon'/>
+          </a>
+
+          <a href="https://github.com/vino-brutor" target="_blank" rel="noreferrer">
+            <img src={githubIcon} alt="Github" className='github-icon'/>
           </a>
         </div>        
       </nav>

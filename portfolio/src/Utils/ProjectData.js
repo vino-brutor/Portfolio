@@ -33,6 +33,12 @@ import foodSwap3 from '../assets/foodswap/foodswap3.PNG'
 import foodSwap4 from '../assets/foodswap/foodswap4.PNG'
 import foodSwap5 from '../assets/foodswap/foodswap5.PNG'
 import foodSwap6 from '../assets/foodswap/foodswap6.PNG'
+import protozoaCover from '../assets/protozoaIdentifier/protozoaCover.jpeg'
+import protozoa1 from '../assets/protozoaIdentifier/protozoa1.jpeg'
+import protozoa2 from '../assets/protozoaIdentifier/protozoa2.jpeg'
+import protozoa3 from '../assets/protozoaIdentifier/protozoa3.jpeg'
+import protozoa4 from '../assets/protozoaIdentifier/protozoa4.jpeg'
+import protozoa5 from '../assets/protozoaIdentifier/protozoa5.jpeg'
 
 
 const projectsData = [
@@ -166,6 +172,29 @@ const projectsData = [
     ],
     liveLink: "https://apps.apple.com/br/app/food-swap/id6747597054",
     repoLink: "https://github.com/vino-brutor/Food-Swap"
+  },
+
+  {
+    id: "protozoa-identifier",
+    title: "PROTOZOA IDENTIFIER",
+    subtitle: "Visão Computacional na Saúde",
+    tags: ["REACT", "PYTHON", "API REST", "MACHINE LEARNING", "NODEJS", "PRISMA", "TENSORFLOW"],
+    cardDescription: "Sistema inteligente para identificação de protozoários em amostras biológicas. Uma ponte entre a análise laboratorial e a visão computacional.",
+    coverImage: protozoaCover,
+    
+    fullDescription: "Nascido da intersecção entre biologia e tecnologia, o Protozoa Identifier é uma ferramenta construída para auxiliar no diagnóstico parasitológico. O projeto possui uma arquitetura dividida: um backend robusto responsável por processar as imagens e rodar os algoritmos de identificação, e um frontend moderno que oferece uma interface intuitiva para o usuário final fazer o upload das amostras. É a aplicação prática da Informática Biomédica para otimizar fluxos de trabalho em laboratórios.",
+    media: [
+      { type: "image", src: protozoa1, alt: "Interface de upload de amostras" },
+      { type: "image", src: protozoa2, alt: "Resultados da análise computacional" },
+      { type: "image", src: protozoa3, alt: "Resultados da análise computacional" },
+      { type: "image", src: protozoa4, alt: "Resultados da análise computacional" },
+      { type: "image", src: protozoa5, alt: "Resultados da análise computacional" }
+    ],
+    team: [
+      { name: "Vitor Bruno", role: "Fullstack Developer", link: "https://www.linkedin.com/in/vitor-bruno-243975258" }
+    ],
+    liveLink: "", // Se você tiver o front hospedado (na Vercel, por ex), coloque o link aqui. Se não, deixe vazio.
+    repoLink: "https://github.com/vino-brutor/ProtozoaIdentifier-Front" // Link do front como principal
   }
 ];
 
