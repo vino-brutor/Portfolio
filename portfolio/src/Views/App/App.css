@@ -247,6 +247,29 @@ html {
   filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.5));
 }
 
-.github-icon {
+.github-icon {  
   filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.5));
+}
+
+.portfolio-container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
+    rgba(168, 85, 247, 0.12), 
+    transparent 40%
+  );
+  z-index: 1; 
+  pointer-events: none;
+}
+
+.hero, 
+.projects-grid-section,
+.project-detail-container {
+  position: relative;
+  z-index: 10; 
 }

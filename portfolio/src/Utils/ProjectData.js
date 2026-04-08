@@ -68,7 +68,7 @@ const projectsData = [
     id: "runicorn",
     title: "RUNICORN",
     subtitle: "Endless Runner Game",
-    tags: ["SWIFT", "SWIFTUI", "SPRITEKIT", "GAME CENTER", "IOS"],
+    tags: ["SWIFT", "SWIFTUI", "SPRITEKIT", "GAME CENTER", "ADS", "IOS"],
     cardDescription: "Um endless runner hipnotizante. Guie seu unicórnio por um túnel brilhante na Aurora Boreal, coletando estrelas e evitando obstáculos cósmicos.",
     coverImage: runicornCover,
     

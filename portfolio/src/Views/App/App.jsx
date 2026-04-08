@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import './App.css'; // Importando o arquivo de estilos
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from '../HomePage/HomePage';
@@ -7,6 +8,20 @@ import linkedinIcon from '../../assets/iconLinkedin.png';
 import githubIcon from '../../assets/githubIcon.png';
 
 const App = () => {
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {      
+      document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+      document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+        
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="portfolio-container">
