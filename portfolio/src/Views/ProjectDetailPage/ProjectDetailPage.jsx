@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import projectsData from "../../Utils/projectData";
+import projectsData from "../../Utils/projectsData";
 import "./ProjectDetailPage.css";
 
 const ProjectDetailPage = () => {
