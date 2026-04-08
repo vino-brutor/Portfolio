@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ProjectCardStyle.css'
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, isEnglish }) => {
+    const lang = isEnglish ? 'EN' : 'PT';
+
     return (
     <Link to={`/projects/${project.id}`} className='card-link'>
         <div className='project-card'>
@@ -13,11 +15,11 @@ const ProjectCard = ({ project }) => {
 
             <div className='card-content'>
                 <div className='card-header'>
-                    {project.subtitle && <span className='card-subtitle'>{project.subtitle}</span>}
+                    {project.subtitle && <span className='card-subtitle'>{project.subtitle[lang]}</span>}
                     <h3>{project.title}</h3>
                 </div>
-
-                <p className="card-description">{project.cardDescription}</p>
+                
+                <p className="card-description">{project.cardDescription[lang]}</p>
 
                 <div className='div-tags'>
                 {

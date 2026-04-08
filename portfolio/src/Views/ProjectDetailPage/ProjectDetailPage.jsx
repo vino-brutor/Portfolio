@@ -3,17 +3,19 @@ import { useParams, Link } from "react-router-dom";
 import projectsData from "../../Utils/ProjectData";
 import "./ProjectDetailPage.css";
 
-const ProjectDetailPage = () => {
+const ProjectDetailPage = ({ isEnglish }) => {
   const { id } = useParams();
+  
+  const lang = isEnglish ? 'EN' : 'PT';
 
   const project = projectsData.find((p) => p.id === id);
 
   if (!project) {
     return (
       <div className="error-page">
-        <h1>Projeto não encontrado</h1>
+        <h1>{isEnglish ? "Project not found" : "Projeto não encontrado"}</h1>
         <Link to="/" className="back-link">
-          Voltar para Home
+          {isEnglish ? "Back to Home" : "Voltar para Home"}
         </Link>
       </div>
     );
@@ -21,15 +23,14 @@ const ProjectDetailPage = () => {
 
   return (
     <div className="project-detail-container">
-      {/* Botão de Voltar sutil (como em algumas refs) */}
       <Link to="/" className="back-button">
         ← Home
       </Link>
 
       <header className="detail-header">
         <h1 className="detail-title">{project.title}</h1>
-        {project.subtitle && (
-          <p className="detail-subtitle">{project.subtitle}</p>
+        {project.subtitle && (          
+          <p className="detail-subtitle">{project.subtitle[lang]}</p>
         )}
 
         <div className="detail-tags">
@@ -48,20 +49,20 @@ const ProjectDetailPage = () => {
       />
 
       <main className="detail-main-content">
-        <section className="description-section">
-          <h2>Sobre o Projeto</h2>
-          <p>{project.fullDescription}</p>
+        <section className="description-section">          
+          <h2>{isEnglish ? "About the Project" : "Sobre o Projeto"}</h2>
+                    
+          <p>{project.fullDescription[lang]}</p>
 
-          {/* Links Externos (se houver) */}
           <div className="project-links">
             {project.liveLink && (
               <a href={project.liveLink} target="_blank" rel="noreferrer">
-                Ver Demo
+                {isEnglish ? "Live Demo" : "Ver Demo"}
               </a>
             )}
             {project.repoLink && (
               <a href={project.repoLink} target="_blank" rel="noreferrer">
-                Ver Código
+                {isEnglish ? "View Code" : "Ver Código"}
               </a>
             )}
           </div>
@@ -70,7 +71,8 @@ const ProjectDetailPage = () => {
         <aside className="detail-sidebar">
           {project.team && project.team.length > 0 && (
             <section className="team-section">
-              <h3>Equipe</h3>
+              {/* Traduzindo os títulos fixos */}
+              <h3>{isEnglish ? "Team" : "Equipe"}</h3>
               <ul>
                 {project.team.map((member, index) => (
                   <li key={index}>
@@ -86,7 +88,8 @@ const ProjectDetailPage = () => {
       </main>
       
       <section className="gallery-section">
-        <h3>Galeria</h3>
+        {/* Traduzindo os títulos fixos */}
+        <h3>{isEnglish ? "Gallery" : "Galeria"}</h3>
         <div className="gallery-grid">
           {project.media &&
             project.media.map((item, index) => {              
@@ -95,7 +98,8 @@ const ProjectDetailPage = () => {
                   <img
                     key={index}
                     src={item.src}
-                    alt={item.alt}
+                    // Lendo a tag alt de acessibilidade dinamicamente
+                    alt={item.alt[lang]}
                     className="gallery-item"
                   />
                 );

@@ -45,18 +45,27 @@ const projectsData = [
   {
     id: "enquadra", 
     title: "ENQUADRA",
-    subtitle: "Galeria de Estudos",
+    subtitle: {
+      PT: "Galeria de Estudos",
+      EN: "Study Gallery"
+    },
     tags: ["SWIFT", "SWIFTUI", "IOS", "CÂMERA", "SWIFT DATA"],
-    cardDescription: "Ferramenta essencial para estudantes. Organize fotos do quadro e slides instantaneamente por matéria, separando os estudos do rolo da câmera.",
+    cardDescription: {
+      PT: "Ferramenta essencial para estudantes. Organize fotos do quadro e slides instantaneamente por matéria, separando os estudos do rolo da câmera.",
+      EN: "Essential tool for students. Instantly organize whiteboard and slide photos by subject, keeping your studies separate from your camera roll."
+    },
     coverImage: enquadraCover,
     
-    fullDescription: "Estudar fica muito mais fácil quando as notas estão organizadas. O Enquadra resolve o problema da bagunça no rolo de câmera do celular. O aplicativo permite capturar fotos do quadro, de slides ou de páginas de livros e organizá-las instantaneamente em pastas por disciplina. Focado na performance e na usabilidade através do SwiftUI, o app oferece busca rápida e uma interface sem distrações para otimizar o tempo de estudo.",
+    fullDescription: {
+      PT: "Estudar fica muito mais fácil quando as notas estão organizadas. O Enquadra resolve o problema da bagunça no rolo de câmera do celular. O aplicativo permite capturar fotos do quadro, de slides ou de páginas de livros e organizá-las instantaneamente em pastas por disciplina. Focado na performance e na usabilidade através do SwiftUI, o app oferece busca rápida e uma interface sem distrações para otimizar o tempo de estudo.",
+      EN: "Studying becomes much easier when your notes are organized. Enquadra solves the problem of a cluttered camera roll. The app allows you to capture photos of whiteboards, slides, or book pages and instantly organize them into subject folders. Focused on performance and usability using SwiftUI, the app offers quick search and a distraction-free interface to optimize your study time."
+    },
     media: [
-      { type: "image", src: enquadra1, alt: "Organização de notas no celular" },
-      { type: "image", src: enquadra2, alt: "Organização de notas no celular" },
-      { type: "image", src: enquadra3, alt: "Organização de notas no celular" },
-      { type: "image", src: enquadra4, alt: "Organização de notas no celular" },
-      { type: "image", src: enquadra5, alt: "Organização de notas no celular" }
+      { type: "image", src: enquadra1, alt: { PT: "Organização de notas no celular", EN: "Note organization on mobile" } },
+      { type: "image", src: enquadra2, alt: { PT: "Organização de notas no celular", EN: "Note organization on mobile" } },
+      { type: "image", src: enquadra3, alt: { PT: "Organização de notas no celular", EN: "Note organization on mobile" } },
+      { type: "image", src: enquadra4, alt: { PT: "Organização de notas no celular", EN: "Note organization on mobile" } },
+      { type: "image", src: enquadra5, alt: { PT: "Organização de notas no celular", EN: "Note organization on mobile" } }
     ],
     team: [
       { name: "Vitor Bruno", role: "iOS Developer & Creator", link: "https://www.linkedin.com/in/vitor-bruno-243975258"}
@@ -67,17 +76,26 @@ const projectsData = [
   {
     id: "runicorn",
     title: "RUNICORN",
-    subtitle: "Endless Runner Game",
+    subtitle: {
+      PT: "Endless Runner Game",
+      EN: "Endless Runner Game"
+    },
     tags: ["SWIFT", "SWIFTUI", "SPRITEKIT", "GAME CENTER", "ADS", "IOS"],
-    cardDescription: "Um endless runner hipnotizante. Guie seu unicórnio por um túnel brilhante na Aurora Boreal, coletando estrelas e evitando obstáculos cósmicos.",
+    cardDescription: {
+      PT: "Um endless runner hipnotizante. Guie seu unicórnio por um túnel brilhante na Aurora Boreal, coletando estrelas e evitando obstáculos cósmicos.",
+      EN: "A mesmerizing endless runner. Guide your unicorn through a glowing tunnel in the Northern Lights, collecting stars and avoiding cosmic obstacles."
+    },
     coverImage: runicornCover,
     
-    fullDescription: "Runicorn é uma experiência imersiva desenvolvida com SpriteKit. O jogador é desafiado a sobreviver o máximo possível dentro de uma Aurora Boreal, desviando de fragmentos de gelo e asteroides. O jogo conta com controles fluidos, suporte opcional a giroscópio, feedback háptico e integração total para disputas de pontuação.",
+    fullDescription: {
+      PT: "Runicorn é uma experiência imersiva desenvolvida com SpriteKit. O jogador é desafiado a sobreviver o máximo possível dentro de uma Aurora Boreal, desviando de fragmentos de gelo e asteroides. O jogo conta com controles fluidos, suporte opcional a giroscópio, feedback háptico e integração total para disputas de pontuação.",
+      EN: "Runicorn is an immersive experience developed with SpriteKit. The player is challenged to survive as long as possible inside the Northern Lights, dodging ice fragments and asteroids. The game features fluid controls, optional gyroscope support, haptic feedback, and full Game Center integration for high-score competitions."
+    },
     media: [
-      { type: "image", src: runicorn4, alt: "Gameplay imersiva em neon" },
-      { type: "image", src: runicorn2, alt: "Gameplay imersiva em neon" },
-      { type: "image", src: runicorn1, alt: "Gameplay imersiva em neon" },
-      { type: "image", src: runicorn3, alt: "Gameplay imersiva em neon" }
+      { type: "image", src: runicorn4, alt: { PT: "Gameplay imersiva em neon", EN: "Immersive neon gameplay" } },
+      { type: "image", src: runicorn2, alt: { PT: "Gameplay imersiva em neon", EN: "Immersive neon gameplay" } },
+      { type: "image", src: runicorn1, alt: { PT: "Gameplay imersiva em neon", EN: "Immersive neon gameplay" } },
+      { type: "image", src: runicorn3, alt: { PT: "Gameplay imersiva em neon", EN: "Immersive neon gameplay" } }
     ],
     team: [
       { name: "Vinicius Cadore", role: "Designer", link: "https://www.linkedin.com/in/cadoreee/"},
@@ -92,21 +110,30 @@ const projectsData = [
   {
     id: "dopamine-news",
     title: "DOPAMINE NEWS",
-    subtitle: "O Seu Jornal Diário",
+    subtitle: {
+      PT: "O Seu Jornal Diário",
+      EN: "Your Daily Newspaper"
+    },
     tags: ["SWIFT", "SWIFTUI", "NODEJS", "MONGODB", "SCENEKIT", "SWIFT DATA", "API", "IOS"],
-    cardDescription: "Um ritual diário simples que reúne jogos de palavras estilo Termo, leituras reflexivas e insights astrológicos em um só lugar.",
+    cardDescription: {
+      PT: "Um ritual diário simples que reúne jogos de palavras estilo Termo, leituras reflexivas e insights astrológicos em um só lugar.",
+      EN: "A simple daily ritual that brings together Wordle-style word games, reflective readings, and astrological insights in one place."
+    },
     coverImage: dopamineCover,
     
-    fullDescription: "O Dopamine transforma curiosidade e diversão em um hábito diário satisfatório de cinco minutos. Ele oferece notícias curadas sem excesso de informações, um caça-palavras para atenção plena e o 'Termo Brasileiro', um desafio de vocabulário inspirado no Wordle. O app possui um layout limpo, com suporte perfeito aos modos claro e escuro.",
+    fullDescription: {
+      PT: "O Dopamine transforma curiosidade e diversão em um hábito diário satisfatório de cinco minutos. Ele oferece notícias curadas sem excesso de informações, um caça-palavras para atenção plena e o 'Termo Brasileiro', um desafio de vocabulário inspirado no Wordle. O app possui um layout limpo, com suporte perfeito aos modos claro e escuro.",
+      EN: "Dopamine turns curiosity and fun into a satisfying five-minute daily habit. It offers curated news without information overload, a word search for mindfulness, and a vocabulary challenge inspired by Wordle. The app features a clean layout with seamless support for both light and dark modes."
+    },
     media: [
-      { type: "image", src: dopamine1, alt: "Jogos de palavras e notícias" },
-      { type: "image", src: dopamine2, alt: "Jogos de palavras e notícias" },
-      { type: "image", src: dopamine3, alt: "Jogos de palavras e notícias" },
-      { type: "image", src: dopamine4, alt: "Jogos de palavras e notícias" },
-      { type: "image", src: dopamine5, alt: "Jogos de palavras e notícias" },
-      { type: "image", src: dopamine9, alt: "Jogos de palavras e notícias" },
-      { type: "image", src: dopamine7, alt: "Jogos de palavras e notícias" },
-      { type: "image", src: dopamine8, alt: "Jogos de palavras e notícias" }    
+      { type: "image", src: dopamine1, alt: { PT: "Jogos de palavras e notícias", EN: "Word games and news" } },
+      { type: "image", src: dopamine2, alt: { PT: "Jogos de palavras e notícias", EN: "Word games and news" } },
+      { type: "image", src: dopamine3, alt: { PT: "Jogos de palavras e notícias", EN: "Word games and news" } },
+      { type: "image", src: dopamine4, alt: { PT: "Jogos de palavras e notícias", EN: "Word games and news" } },
+      { type: "image", src: dopamine5, alt: { PT: "Jogos de palavras e notícias", EN: "Word games and news" } },
+      { type: "image", src: dopamine9, alt: { PT: "Jogos de palavras e notícias", EN: "Word games and news" } },
+      { type: "image", src: dopamine7, alt: { PT: "Jogos de palavras e notícias", EN: "Word games and news" } },
+      { type: "image", src: dopamine8, alt: { PT: "Jogos de palavras e notícias", EN: "Word games and news" } }
     ],
     team: [
       { name: "Rafaela Julianotte", role: "Designer", link: "https://www.linkedin.com/in/rafajulianotte/"},
@@ -121,20 +148,29 @@ const projectsData = [
   {
     id: "completeness",
     title: "COMPLETENESS",
-    subtitle: "Rastreador de Hábitos",
+    subtitle: {
+      PT: "Rastreador de Hábitos",
+      EN: "Habit Tracker"
+    },
     tags: ["SWIFT", "SWIFTUI", "WATCHOS", "IOS", "WIDGETS", "LIVE ACTIVITIES", "SWIFT DATA"],
-    cardDescription: "App para quem deseja viver com mais clareza. Registre hábitos, acompanhe sua rotina e celebre pequenas vitórias sem a pressão de métricas frias.",
+    cardDescription: {
+      PT: "App para quem deseja viver com mais clareza. Registre hábitos, acompanhe sua rotina e celebre pequenas vitórias sem a pressão de métricas frias.",
+      EN: "App for those who want to live with more clarity. Log habits, track your routine, and celebrate small victories without the pressure of cold metrics."
+    },
     coverImage: completenessCover,
     
-    fullDescription: "Construir novos hábitos não precisa ser algo estressante. O Completeness foi desenhado para ser uma ferramenta de progresso real, no ritmo do usuário. Ele conta com lembretes motivadores, visualização de progresso semanal por meio de gráficos customizados e uma interface que encoraja o usuário a focar no que realmente importa.",
+    fullDescription: {
+      PT: "Construir novos hábitos não precisa ser algo estressante. O Completeness foi desenhado para ser uma ferramenta de progresso real, no ritmo do usuário. Ele conta com lembretes motivadores, visualização de progresso semanal por meio de gráficos customizados e uma interface que encoraja o usuário a focar no que realmente importa.",
+      EN: "Building new habits doesn't have to be stressful. Completeness was designed to be a tool for real progress, at the user's pace. It features motivating reminders, weekly progress visualization through customized charts, and an interface that encourages the user to focus on what truly matters."
+    },
     media: [
-      { type: "image", src: completeness6, alt: "Gráficos de progresso semanal" },
-      { type: "image", src: completeness2, alt: "Gráficos de progresso semanal" },        
-      { type: "image", src: completeness3, alt: "Gráficos de progresso semanal" },        
-      { type: "image", src: completeness7, alt: "Gráficos de progresso semanal" },        
-      { type: "image", src: completeness8, alt: "Gráficos de progresso semanal" },        
-      { type: "image", src: completeness4, alt: "Gráficos de progresso semanal" },        
-      { type: "image", src: completeness5, alt: "Gráficos de progresso semanal" },                
+      { type: "image", src: completeness6, alt: { PT: "Gráficos de progresso semanal", EN: "Weekly progress charts" } },
+      { type: "image", src: completeness2, alt: { PT: "Gráficos de progresso semanal", EN: "Weekly progress charts" } },        
+      { type: "image", src: completeness3, alt: { PT: "Gráficos de progresso semanal", EN: "Weekly progress charts" } },        
+      { type: "image", src: completeness7, alt: { PT: "Gráficos de progresso semanal", EN: "Weekly progress charts" } },        
+      { type: "image", src: completeness8, alt: { PT: "Gráficos de progresso semanal", EN: "Weekly progress charts" } },        
+      { type: "image", src: completeness4, alt: { PT: "Gráficos de progresso semanal", EN: "Weekly progress charts" } },        
+      { type: "image", src: completeness5, alt: { PT: "Gráficos de progresso semanal", EN: "Weekly progress charts" } }
     ],
     team: [
       { name: "Vitor Martins", role: "Designer", link: "https://www.linkedin.com/in/vítor-martins-940576207/" },
@@ -149,19 +185,28 @@ const projectsData = [
   {
     id: "food-swap",
     title: "FOOD SWAP",
-    subtitle: "Gastronomia & Bebidas",
+    subtitle: {
+      PT: "Gastronomia & Bebidas",
+      EN: "Food & Drink"
+    },
     tags: ["SWIFT", "UIKIT", "MAPKIT", "IOS"],
-    cardDescription: "Apresentado com sucesso em evento na Tecnopuc, um aplicativo com foco em inovação e experiência no ramo de gastronomia.",
+    cardDescription: {
+      PT: "Apresentado com sucesso em evento na Tecnopuc, um aplicativo com foco em inovação e experiência no ramo de gastronomia.",
+      EN: "Successfully presented at a Tecnopuc event, an application focused on innovation and user experience in the gastronomy sector."
+    },
     coverImage: foodSwapCover,
     
-    fullDescription: "Desenvolvido como parte da jornada na Developer Academy e apresentado em evento na Tecnopuc, o Food Swap é um aplicativo desenhado para facilitar a vida do usuário dentro da categoria de gastronomia. O projeto aplicou conceitos sólidos de design de interfaces e arquitetura de software para o ecossistema iOS.",
+    fullDescription: {
+      PT: "Desenvolvido como parte da jornada na Developer Academy e apresentado em evento na Tecnopuc, o Food Swap é um aplicativo desenhado para facilitar a vida do usuário dentro da categoria de gastronomia. O projeto aplicou conceitos sólidos de design de interfaces e arquitetura de software para o ecossistema iOS.",
+      EN: "Developed as part of the Apple Developer Academy journey and presented at a Tecnopuc event, Food Swap is an application designed to make the user's life easier within the gastronomy category. The project applied solid concepts of interface design and software architecture for the iOS ecosystem."
+    },
     media: [
-      { type: "image", src: foodSwap1, alt: "Food Swap Interface" },
-      { type: "image", src: foodSwap2, alt: "Food Swap Interface" },
-      { type: "image", src: foodSwap3, alt: "Food Swap Interface" },
-      { type: "image", src: foodSwap4, alt: "Food Swap Interface" },
-      { type: "image", src: foodSwap5, alt: "Food Swap Interface" },
-      { type: "image", src: foodSwap6, alt: "Food Swap Interface" }
+      { type: "image", src: foodSwap1, alt: { PT: "Food Swap Interface", EN: "Food Swap Interface" } },
+      { type: "image", src: foodSwap2, alt: { PT: "Food Swap Interface", EN: "Food Swap Interface" } },
+      { type: "image", src: foodSwap3, alt: { PT: "Food Swap Interface", EN: "Food Swap Interface" } },
+      { type: "image", src: foodSwap4, alt: { PT: "Food Swap Interface", EN: "Food Swap Interface" } },
+      { type: "image", src: foodSwap5, alt: { PT: "Food Swap Interface", EN: "Food Swap Interface" } },
+      { type: "image", src: foodSwap6, alt: { PT: "Food Swap Interface", EN: "Food Swap Interface" } }
     ],
     team: [
       { name: "Luísa Cecília da Silva", role: "Designer", link: "https://www.linkedin.com/in/lucecyl/" },
@@ -177,24 +222,33 @@ const projectsData = [
   {
     id: "protozoa-identifier",
     title: "PROTOZOA IDENTIFIER",
-    subtitle: "Visão Computacional na Saúde",
+    subtitle: {
+      PT: "Visão Computacional na Saúde",
+      EN: "Computer Vision in Healthcare"
+    },
     tags: ["REACT", "PYTHON", "API REST", "MACHINE LEARNING", "NODEJS", "PRISMA", "TENSORFLOW"],
-    cardDescription: "Sistema inteligente para identificação de protozoários em amostras biológicas. Uma ponte entre a análise laboratorial e a visão computacional.",
+    cardDescription: {
+      PT: "Sistema inteligente para identificação de protozoários em amostras biológicas. Uma ponte entre a análise laboratorial e a visão computacional.",
+      EN: "Intelligent system for the identification of protozoa in biological samples. A bridge between laboratory analysis and computer vision."
+    },
     coverImage: protozoaCover,
     
-    fullDescription: "Nascido da intersecção entre biologia e tecnologia, o Protozoa Identifier é uma ferramenta construída para auxiliar no diagnóstico parasitológico. O projeto possui uma arquitetura dividida: um backend robusto responsável por processar as imagens e rodar os algoritmos de identificação, e um frontend moderno que oferece uma interface intuitiva para o usuário final fazer o upload das amostras. É a aplicação prática da Informática Biomédica para otimizar fluxos de trabalho em laboratórios.",
+    fullDescription: {
+      PT: "Nascido da intersecção entre biologia e tecnologia, o Protozoa Identifier é uma ferramenta construída para auxiliar no diagnóstico parasitológico. O projeto possui uma arquitetura dividida: um backend robusto responsável por processar as imagens e rodar os algoritmos de identificação, e um frontend moderno que oferece uma interface intuitiva para o usuário final fazer o upload das amostras. É a aplicação prática da Informática Biomédica para otimizar fluxos de trabalho em laboratórios.",
+      EN: "Born from the intersection of biology and technology, Protozoa Identifier is a tool built to assist in parasitological diagnosis. The project features a split architecture: a robust backend responsible for processing images and running identification algorithms, and a modern frontend that offers an intuitive interface for the end-user to upload samples. It is the practical application of Biomedical Informatics to optimize laboratory workflows."
+    },
     media: [
-      { type: "image", src: protozoa1, alt: "Interface de upload de amostras" },
-      { type: "image", src: protozoa2, alt: "Resultados da análise computacional" },
-      { type: "image", src: protozoa3, alt: "Resultados da análise computacional" },
-      { type: "image", src: protozoa4, alt: "Resultados da análise computacional" },
-      { type: "image", src: protozoa5, alt: "Resultados da análise computacional" }
+      { type: "image", src: protozoa1, alt: { PT: "Interface de upload de amostras", EN: "Sample upload interface" } },
+      { type: "image", src: protozoa2, alt: { PT: "Resultados da análise computacional", EN: "Computational analysis results" } },
+      { type: "image", src: protozoa3, alt: { PT: "Resultados da análise computacional", EN: "Computational analysis results" } },
+      { type: "image", src: protozoa4, alt: { PT: "Resultados da análise computacional", EN: "Computational analysis results" } },
+      { type: "image", src: protozoa5, alt: { PT: "Resultados da análise computacional", EN: "Computational analysis results" } }
     ],
     team: [
       { name: "Vitor Bruno", role: "Fullstack Developer", link: "https://www.linkedin.com/in/vitor-bruno-243975258" }
     ],
-    liveLink: "", // Se você tiver o front hospedado (na Vercel, por ex), coloque o link aqui. Se não, deixe vazio.
-    repoLink: "https://github.com/vino-brutor/ProtozoaIdentifier-Front" // Link do front como principal
+    liveLink: "",
+    repoLink: "https://github.com/vino-brutor/ProtozoaIdentifier-Front"
   }
 ];
 
