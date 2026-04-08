@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectCard from "../../Components/ProjectCard/ProjectCard";
 import projectsData  from "../../Utils/ProjectData"
-import meImage from "../../Assets/me.png"
+import meImage from "../../assets/me.png"
 
 const HomePage = () => {
     const renderGlitcheWord = (word) => {
