@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectCard from "../../Components/ProjectCard/ProjectCard";
-import projectsData  from "../../Utils/ProjectData"
+import projectsData  from "../../Utils/projectData"
 import meImage from "../../Assets/me.png"
 
 const HomePage = () => {
