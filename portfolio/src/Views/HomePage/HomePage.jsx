@@ -5,14 +5,38 @@ import meImage from "../../assets/me.png";
 
 const HomePage = ({ isEnglish }) => {
   const mySkills = [
-    {name: "Swift\nSwiftUI\nUIKit", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg"},    
-    {name: "Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-plain.svg"},
-    {name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"},
-    {name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"},    
-    {name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"},
-    {name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"},
-    {name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"},    
-    {name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"}
+    {
+      name: "Swift\nSwiftUI\nUIKit",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg",
+    },
+    {
+      name: "Flutter",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-plain.svg",
+    },
+    {
+      name: "React",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    },
+    {
+      name: "Node.js",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    },
+    {
+      name: "HTML",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+    },
+    {
+      name: "CSS",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+    },
+    {
+      name: "JavaScript",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    },
+    {
+      name: "Python",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+    },
   ];
 
   const renderGlitcheWord = (word) => {
@@ -25,7 +49,7 @@ const HomePage = ({ isEnglish }) => {
 
   return (
     <>
-      <main className="hero">
+      <main id="hero" className="hero">
         <div className="hero-text">
           <p className="subtitle">
             {isEnglish
@@ -67,6 +91,61 @@ const HomePage = ({ isEnglish }) => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="contact" className="big-footer-section">
+        <div className="footer-container"> 
+          <div className="contact-content">
+          <h2 className="massive-title">
+            {isEnglish ? "CONTACT ME" : "ENTRE EM"} <br />            
+            <span className="purple-text">{isEnglish ? "LETS'S WORK." : "CONTATO."}</span><br />             
+          </h2>
+          
+          <div className="footer-links">
+              <a 
+                href={ isEnglish ? 
+                  "https://mail.google.com/mail/?view=cm&fs=1&to=viktorbruno2006@gmail.com&su=Hi!%20I%20saw%20your%20portfolio" :
+                  "https://mail.google.com/mail/?view=cm&fs=1&to=viktorbruno2006@gmail.com&su=Olá!%20Vi%20seu%20portfólio" }
+                target="_blank" 
+                rel="noreferrer" 
+                className="big-footer-link email-link"
+              >
+                {isEnglish ? "EMAIL ME" : "MEU EMAIL"} ↗
+              </a>
+
+              <a 
+                href="https://www.linkedin.com/in/vitor-bruno-243975258" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="big-footer-link linkedin-link"
+              >
+                LINKEDIN ↗
+              </a>
+
+              <a 
+                href="https://github.com/vino-brutor" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="big-footer-link github-link"
+              >
+                GITHUB ↗
+              </a>
+            </div>
+          </div>         
+
+          <div className="footer-bottom">
+            <p className="footer-subtitle">
+              {isEnglish
+                ? "I'm always open to discussing new projects, ideas or opportunities."
+                : "Estou sempre aberto a discutir novos projetos, ideias ou oportunidades."}
+            </p>
+
+            <a href="#hero">
+              <button className="resume-btn">BACK TO TOP</button>
+            </a>
+          </div>
+
         </div>
       </section>
     </>

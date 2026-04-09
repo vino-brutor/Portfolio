@@ -34,11 +34,7 @@ const App = () => {
       {/* Navegação */}
       <nav className="navbar">
         <div className="logo">
-          VB<span>_PORTFOLIO</span>
-
-          <button onClick={toogleLanguage} className="lang-btn">
-            {isEnglish ? '🇺🇸 EN' : '🇧🇷 PT'}
-          </button>
+          VB<span>_PORTFOLIO</span>          
         </div>
         
         <div className="nav-links">
@@ -47,9 +43,9 @@ const App = () => {
           <a href="#contact">{isEnglish ? 'CONTACT' : 'CONTATO'}</a>
         </div>
 
-        <div className='nav-buttons'>          
-          <button className="resume-btn">
-            {isEnglish ? 'RESUME' : 'CURRÍCULO'}
+        <div className='nav-buttons'>  
+          <button onClick={toogleLanguage} className="lang-btn">
+            {isEnglish ? '🇺🇸 EN' : '🇧🇷 PT'}
           </button>
 
           <a href="https://www.linkedin.com/in/vitor-bruno-243975258/" target="_blank" rel="noreferrer">
