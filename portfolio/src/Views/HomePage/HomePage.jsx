@@ -4,6 +4,7 @@ import projectsData from "../../Utils/ProjectData"
 import meImage from "../../assets/me.png"
 import gitHubIconSkill from "../../assets/githubSkillsIcon-com.svg"
 import powerbiIcon from "../../assets/power-bi-icon.svg"
+import experiencesData from "../../Utils/ExperienceData"
 
 const HomePage = ({ isEnglish }) => {
   const mySkills = [
@@ -114,6 +115,33 @@ const HomePage = ({ isEnglish }) => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="experience" className="experience-section">
+        <h2 className="section-title">
+          {isEnglish ? "EXPERIENCE" : "EXPERIÊNCIA"}
+        </h2>
+
+        <div className="timeline-container">
+          {experiencesData.map((exp, index) => (
+            <div className="timeline-item" key={index}>
+              {/* A bolinha neon na linha do tempo */}
+              <div className="timeline-dot"></div>
+                            
+              <div className="timeline-card">
+                <p className="exp-date">{exp.date[isEnglish ? 'EN' : 'PT']}</p>
+                <h3 className="exp-title">{exp.title[isEnglish ? 'EN' : 'PT']}</h3>
+                <p className="exp-company">{exp.company}</p>
+                
+                <ul className="exp-bullets">
+                  {exp.bullets[isEnglish ? 'EN' : 'PT'].map((bullet, i) => (
+                    <li key={i}>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

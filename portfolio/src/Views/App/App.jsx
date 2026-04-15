@@ -31,15 +31,15 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="portfolio-container">
-      {/* Navegação */}
       <nav className="navbar">
-        <div className="logo">
-          VB<span>_PORTFOLIO</span>          
+        <div className="logo">          
+            VB<span>PORTFOLIO</span>                    
         </div>
         
         <div className="nav-links">
           <a href="#projects">{isEnglish ? 'PROJECTS' : 'PROJETOS'}</a>
           <a href="#skills">{isEnglish ? 'SKILLS' : 'HABILIDADES'}</a>
+          <a href="#experience">{isEnglish ? 'EXPERIENCE' : 'EXPERIÊNCIA'}</a>
           <a href="#contact">{isEnglish ? 'CONTACT' : 'CONTATO'}</a>
         </div>
 

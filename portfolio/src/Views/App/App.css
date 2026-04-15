@@ -449,6 +449,110 @@ html {
   width: 100%;
 }
 
+.experience-section {
+  max-width: 1000px; 
+  margin: 0 auto;
+  padding: 2rem 2rem 10rem 2rem;
+  scroll-margin-top: 100px;
+}
+
+.timeline-container {
+  position: relative;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 7px; 
+  width: 2px;
+  background-color: #333;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 3rem; 
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 2rem; 
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--bg-dark); 
+  border: 2px solid var(--purple-light); 
+  box-shadow: 0 0 10px var(--purple-neon);
+  z-index: 2; 
+}
+
+.timeline-card {
+  background-color: var(--card-bg);
+  border: 1px solid #222;
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.timeline-card:hover {
+  border-color: #444;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transform: translateX(5px); 
+}
+
+.exp-date {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-family: monospace; 
+}
+
+.exp-title {
+  color: var(--text-white);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.exp-company {
+  color: var(--purple-light);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.exp-bullets {
+  list-style-type: none; 
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.exp-bullets li {
+  color: var(--text-gray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.exp-bullets li::before {
+  content: '•';
+  color: var(--purple-neon);
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: -4px;
+}
+
 @media (max-width: 768px) {
   .skills-large-card {
     padding: 2rem;
@@ -486,5 +590,17 @@ html {
 
   .massive-title {
     font-size: 3rem;
+  }
+
+  .experience-section {
+    padding: 2rem 1rem;
+  }
+  
+  .timeline-card {
+    padding: 1.5rem;
+  }
+
+  .exp-title {
+    font-size: 1.25rem;
   }
 }
