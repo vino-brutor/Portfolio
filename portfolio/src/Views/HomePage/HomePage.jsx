@@ -1,12 +1,14 @@
-import React from "react";
-import ProjectCard from "../../Components/ProjectCard/ProjectCard";
-import projectsData from "../../Utils/ProjectData";
-import meImage from "../../assets/me.png";
+import React from "react"
+import ProjectCard from "../../Components/ProjectCard/ProjectCard"
+import projectsData from "../../Utils/ProjectData"
+import meImage from "../../assets/me.png"
+import gitHubIconSkill from "../../assets/githubSkillsIcon-com.svg"
+import powerbiIcon from "../../assets/power-bi-icon.svg"
 
 const HomePage = ({ isEnglish }) => {
   const mySkills = [
     {
-      name: "Swift\nSwiftUI\nUIKit",
+      name: "Swift | SwiftUI | UIKit",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg",
     },
     {
@@ -34,9 +36,30 @@ const HomePage = ({ isEnglish }) => {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
     },
     {
+      name: "TypeScript",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+    },
+    {
       name: "Python",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
     },
+    {
+      name: "Figma",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
+    },
+    {
+      name: "GitHub",
+      icon: gitHubIconSkill,
+    },
+    {
+      name: "SQL",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg",
+    },
+    {
+      name: "Power BI",
+      icon: powerbiIcon,
+    },
+
   ];
 
   const renderGlitcheWord = (word) => {
@@ -142,7 +165,7 @@ const HomePage = ({ isEnglish }) => {
             </p>
 
             <a href="#hero">
-              <button className="resume-btn">BACK TO TOP</button>
+              <button className="resume-btn">{isEnglish ? "BACK TO TOP" : "VOLTAR AO TOPO"}</button>
             </a>
           </div>
 

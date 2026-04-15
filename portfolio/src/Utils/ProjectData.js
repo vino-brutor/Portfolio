@@ -40,7 +40,6 @@ import protozoa3 from '../assets/protozoaIdentifier/protozoa3.jpeg'
 import protozoa4 from '../assets/protozoaIdentifier/protozoa4.jpeg'
 import protozoa5 from '../assets/protozoaIdentifier/protozoa5.jpeg'
 
-
 const projectsData = [
   {
     id: "enquadra", 
@@ -57,8 +56,8 @@ const projectsData = [
     coverImage: enquadraCover,
     
     fullDescription: {
-      PT: "Estudar fica muito mais fácil quando as notas estão organizadas. O Enquadra resolve o problema da bagunça no rolo de câmera do celular. O aplicativo permite capturar fotos do quadro, de slides ou de páginas de livros e organizá-las instantaneamente em pastas por disciplina. Focado na performance e na usabilidade através do SwiftUI, o app oferece busca rápida e uma interface sem distrações para otimizar o tempo de estudo.",
-      EN: "Studying becomes much easier when your notes are organized. Enquadra solves the problem of a cluttered camera roll. The app allows you to capture photos of whiteboards, slides, or book pages and instantly organize them into subject folders. Focused on performance and usability using SwiftUI, the app offers quick search and a distraction-free interface to optimize your study time."
+      PT: "Estudar fica muito mais fácil quando as notas estão organizadas. O Enquadra resolve o problema da bagunça no rolo de câmera do celular, permitindo capturar e categorizar fotos por disciplina. O aplicativo foi construído nativamente usando **Swift** e **SwiftUI** para garantir uma interface fluida. A manipulação de imagens e o acesso customizado à câmera são gerenciados com frameworks nativos, enquanto a persistência estruturada das pastas e fotos é feita localmente utilizando o **SwiftData**.",
+      EN: "Studying becomes much easier when your notes are organized. Enquadra solves the problem of a cluttered camera roll by allowing you to capture and categorize photos by subject. The app was built natively using **Swift** and **SwiftUI** to ensure a fluid interface. Image manipulation and custom camera access are managed with native frameworks, while the structured persistence of folders and photos is handled locally using **SwiftData**."
     },
     media: [
       { type: "image", src: enquadra1, alt: { PT: "Organização de notas no celular", EN: "Note organization on mobile" } },
@@ -88,8 +87,8 @@ const projectsData = [
     coverImage: runicornCover,
     
     fullDescription: {
-      PT: "Runicorn é uma experiência imersiva desenvolvida com SpriteKit. O jogador é desafiado a sobreviver o máximo possível dentro de uma Aurora Boreal, desviando de fragmentos de gelo e asteroides. O jogo conta com controles fluidos, suporte opcional a giroscópio, feedback háptico e integração total para disputas de pontuação.",
-      EN: "Runicorn is an immersive experience developed with SpriteKit. The player is challenged to survive as long as possible inside the Northern Lights, dodging ice fragments and asteroids. The game features fluid controls, optional gyroscope support, haptic feedback, and full Game Center integration for high-score competitions."
+      PT: "Runicorn é uma experiência imersiva arcade para iOS. O jogador é desafiado a sobreviver dentro de uma Aurora Boreal, desviando de obstáculos e coletando itens. O jogo foi inteiramente desenvolvido utilizando o motor **SpriteKit** da Apple para renderização gráfica e física de colisões em 2D. A arquitetura engloba a mecânica de controles fluidos, feedback háptico dinâmico, menus em **SwiftUI** e integração total com o **Game Center** (GameKit) para o placar de líderes global.",
+      EN: "Runicorn is an immersive arcade experience for iOS. The player is challenged to survive inside the Northern Lights, dodging obstacles and collecting items. The game was entirely developed using Apple's **SpriteKit** engine for graphical rendering and 2D collision physics. The architecture encompasses fluid control mechanics, dynamic haptic feedback, **SwiftUI** menus, and full integration with **Game Center** (GameKit) for the global leaderboard."
     },
     media: [
       { type: "image", src: runicorn4, alt: { PT: "Gameplay imersiva em neon", EN: "Immersive neon gameplay" } },
@@ -122,8 +121,8 @@ const projectsData = [
     coverImage: dopamineCover,
     
     fullDescription: {
-      PT: "O Dopamine transforma curiosidade e diversão em um hábito diário satisfatório de cinco minutos. Ele oferece notícias curadas sem excesso de informações, um caça-palavras para atenção plena e o 'Termo Brasileiro', um desafio de vocabulário inspirado no Wordle. O app possui um layout limpo, com suporte perfeito aos modos claro e escuro.",
-      EN: "Dopamine turns curiosity and fun into a satisfying five-minute daily habit. It offers curated news without information overload, a word search for mindfulness, and a vocabulary challenge inspired by Wordle. The app features a clean layout with seamless support for both light and dark modes."
+      PT: "O Dopamine transforma leitura e jogos em um hábito diário. O app oferece notícias curadas e minigames para atenção plena. O projeto possui uma arquitetura robusta: o backend funciona via **Node.js** com banco de dados **MongoDB**, consumindo APIs externas de notícias para popular a base. O frontend foi desenvolvido em **SwiftUI** e consome a nossa própria **API REST**. O armazenamento local usa **SwiftData**, e partes da interface gamificada contam com o poder gráfico do **SceneKit**.",
+      EN: "Dopamine turns reading and gaming into a daily habit. The app offers curated news and minigames for mindfulness. The project features a robust architecture: the backend runs on **Node.js** with a **MongoDB** database, consuming external news APIs to populate our data. The frontend was developed in **SwiftUI** and consumes our custom **REST API**. Local caching relies on **SwiftData**, and parts of the gamified interface leverage the graphical power of **SceneKit**."
     },
     media: [
       { type: "image", src: dopamine1, alt: { PT: "Jogos de palavras e notícias", EN: "Word games and news" } },
@@ -160,8 +159,8 @@ const projectsData = [
     coverImage: completenessCover,
     
     fullDescription: {
-      PT: "Construir novos hábitos não precisa ser algo estressante. O Completeness foi desenhado para ser uma ferramenta de progresso real, no ritmo do usuário. Ele conta com lembretes motivadores, visualização de progresso semanal por meio de gráficos customizados e uma interface que encoraja o usuário a focar no que realmente importa.",
-      EN: "Building new habits doesn't have to be stressful. Completeness was designed to be a tool for real progress, at the user's pace. It features motivating reminders, weekly progress visualization through customized charts, and an interface that encourages the user to focus on what truly matters."
+      PT: "Desenhado para ser uma ferramenta de progresso real, o Completeness foca em lembretes e métricas customizadas de hábitos. O ecossistema da aplicação é extenso, feito majoritariamente em **SwiftUI**. A persistência de dados é estruturada via **SwiftData**. O maior desafio técnico da aplicação foi construir suporte multitelas com um app independente em **watchOS** e expandir as interações ativas para a Dynamic Island e Lock Screen usando o **WidgetKit** e **Live Activities**.",
+      EN: "Designed to be a tool for real progress, Completeness focuses on custom reminders and habit metrics. The application's ecosystem is extensive, built predominantly with **SwiftUI**. Data persistence is structured via **SwiftData**. The greatest technical challenge was building multi-device support with an independent **watchOS** app and expanding active interactions to the Dynamic Island and Lock Screen using **WidgetKit** and **Live Activities**."
     },
     media: [
       { type: "image", src: completeness6, alt: { PT: "Gráficos de progresso semanal", EN: "Weekly progress charts" } },
@@ -197,8 +196,8 @@ const projectsData = [
     coverImage: foodSwapCover,
     
     fullDescription: {
-      PT: "Desenvolvido como parte da jornada na Developer Academy e apresentado em evento na Tecnopuc, o Food Swap é um aplicativo desenhado para facilitar a vida do usuário dentro da categoria de gastronomia. O projeto aplicou conceitos sólidos de design de interfaces e arquitetura de software para o ecossistema iOS.",
-      EN: "Developed as part of the Apple Developer Academy journey and presented at a Tecnopuc event, Food Swap is an application designed to make the user's life easier within the gastronomy category. The project applied solid concepts of interface design and software architecture for the iOS ecosystem."
+      PT: "Desenvolvido durante a Apple Developer Academy e apresentado na Tecnopuc, o Food Swap é um aplicativo desenhado para guiar o usuário na categoria de gastronomia. O projeto aplicou conceitos de design de interface e arquitetura de software para o iOS. A camada visual da aplicação foi construída com o clássico framework **UIKit**, enquanto toda a manipulação de coordenadas e pontos de interesse no mapa utiliza os recursos nativos do **MapKit** e **CoreLocation**.",
+      EN: "Developed during the Apple Developer Academy and presented at Tecnopuc, Food Swap is an application designed to guide the user in the gastronomy category. The project applied concepts of interface design and software architecture for iOS. The visual layer of the application was built with the classic **UIKit** framework, while all manipulation of coordinates and points of interest on the map utilizes the native features of **MapKit** and **CoreLocation**."
     },
     media: [
       { type: "image", src: foodSwap1, alt: { PT: "Food Swap Interface", EN: "Food Swap Interface" } },
@@ -234,8 +233,8 @@ const projectsData = [
     coverImage: protozoaCover,
     
     fullDescription: {
-      PT: "Nascido da intersecção entre biologia e tecnologia, o Protozoa Identifier é uma ferramenta construída para auxiliar no diagnóstico parasitológico. O projeto possui uma arquitetura dividida: um backend robusto responsável por processar as imagens e rodar os algoritmos de identificação, e um frontend moderno que oferece uma interface intuitiva para o usuário final fazer o upload das amostras. É a aplicação prática da Informática Biomédica para otimizar fluxos de trabalho em laboratórios.",
-      EN: "Born from the intersection of biology and technology, Protozoa Identifier is a tool built to assist in parasitological diagnosis. The project features a split architecture: a robust backend responsible for processing images and running identification algorithms, and a modern frontend that offers an intuitive interface for the end-user to upload samples. It is the practical application of Biomedical Informatics to optimize laboratory workflows."
+      PT: "Nascido da aplicação direta de Informática Biomédica, o Protozoa Identifier é uma ferramenta para diagnóstico parasitológico. A arquitetura engloba múltiplas tecnologias: o frontend intuitivo web foi orquestrado em **React**. Os dados e a **API REST** fluem via **Node.js** e gerencimento de banco com o **Prisma ORM**. O coração da aplicação é um modelo de **Machine Learning** de Visão Computacional, treinado em **Python** utilizando **TensorFlow** para processar e classificar as imagens das amostras.",
+      EN: "Born from the direct application of Biomedical Informatics, Protozoa Identifier is a tool for parasitological diagnosis. The architecture encompasses multiple technologies: the intuitive web frontend was orchestrated in **React**. Data and the **REST API** flow via **Node.js** with database management using **Prisma ORM**. The heart of the application is a Computer Vision **Machine Learning** model, trained in **Python** using **TensorFlow** to process and classify sample images."
     },
     media: [
       { type: "image", src: protozoa1, alt: { PT: "Interface de upload de amostras", EN: "Sample upload interface" } },
