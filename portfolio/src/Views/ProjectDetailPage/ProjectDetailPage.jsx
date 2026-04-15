@@ -21,6 +21,19 @@ const ProjectDetailPage = ({ isEnglish }) => {
     );
   }
 
+  const renderWithBold = (text) => {
+    if (!text) return null;
+    // Separa o texto onde tem **
+    const parts = text.split(/(\*\*.*?\*\*)/g)
+    
+    return parts.map((part, index) => {
+      // Se a parte começar e terminar com **, a gente tira os asteriscos e coloca a tag <strong>
+      if (part.startsWith("**") && part.endsWith("**")) {
+        return <strong key={index} style={{ color: 'var(--purple-light)' }}>{part.slice(2, -2)}</strong>
+      }
+      return part; // Se não, retorna o texto normal
+    })
+  }
   return (
     <div className="project-detail-container">
       <Link to="/" className="back-button">
@@ -52,7 +65,9 @@ const ProjectDetailPage = ({ isEnglish }) => {
         <section className="description-section">          
           <h2>{isEnglish ? "About the Project" : "Sobre o Projeto"}</h2>
                     
-          <p>{project.fullDescription[lang]}</p>
+          <p className="project-description-text">
+            {renderWithBold(project.fullDescription[lang])}
+          </p>
 
           <div className="project-links">
             {project.liveLink && (

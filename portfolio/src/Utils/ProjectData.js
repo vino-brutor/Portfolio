@@ -39,6 +39,12 @@ import protozoa2 from '../assets/protozoaIdentifier/protozoa2.jpeg'
 import protozoa3 from '../assets/protozoaIdentifier/protozoa3.jpeg'
 import protozoa4 from '../assets/protozoaIdentifier/protozoa4.jpeg'
 import protozoa5 from '../assets/protozoaIdentifier/protozoa5.jpeg'
+import theLoveCode1 from '../assets/TheLoveCode/Simulator Screenshot - iPad Pro 13-inch (M4) - 2026-02-27 at 17.16.31.png'
+import theLoveCode2 from '../assets/TheLoveCode/Simulator Screenshot - iPad Pro 13-inch (M4) - 2026-04-06 at 15.13.36.png'
+import theLoveCode5 from '../assets/TheLoveCode/the love code rnaP.png'
+import theLoveCode3 from '../assets/TheLoveCode/the love code gameplay.png'
+import theLoveCode4 from '../assets/TheLoveCode/the love code ribossome.png'
+import theLoveCodeCover from '../assets/covers/theLoveCodeCover.png'
 
 const projectsData = [
   {
@@ -248,6 +254,37 @@ const projectsData = [
     ],
     liveLink: "",
     repoLink: "https://github.com/vino-brutor/ProtozoaIdentifier-Front"
+  },
+{
+    id: "the-love-code",
+    title: "THE LOVE CODE",
+    subtitle: {
+      PT: "Swift Student Challenge 26",
+      EN: "Swift Student Challenge 26"
+    },
+    tags: ["SWIFT", "SWIFTUI", "SPRITEKIT", "AVFOUNDATION", "GAME DESIGN", "SSC 26"],
+    cardDescription: {
+      PT: "Jogo educacional baseado em ritmo criado para o Swift Student Challenge 2026. Uma experiência imersiva com elementos de storytelling e mecânicas musicais.",
+      EN: "Rhythm-based educational game created for the 2026 Swift Student Challenge. An immersive experience featuring storytelling elements and musical mechanics."
+    },
+    coverImage: theLoveCodeCover,
+    
+    fullDescription: {
+      PT: "Desenvolvido como minha submissão oficial para o **Swift Student Challenge de 2026**, o **The Love Code** é um jogo educacional inovador que mistura mecânicas de jogos de ritmo com um forte elemento de storytelling. O projeto foi totalmente construído com **Swift**, **SwiftUI** e SpriteKit para as interfaces dinâmicas, utilizando processamento de áudio e animações complexas para sincronizar a gameplay nativa com a trilha sonora. O objetivo principal do app é engajar o jogador através de uma narrativa interativa enquanto ensina conceitos lógicos de forma imersiva e emocionalmente ressonante.",
+      EN: "Developed as my official submission for the **2026 Swift Student Challenge**, *The Love Code* is an innovative educational game that blends rhythm mechanics with strong storytelling elements. The project was built entirely with **Swift**, **SwiftUI** and SpriteKit for the dynamic interfaces, utilizing audio processing and complex animations to synchronize native gameplay with the soundtrack. The main goal of the app is to engage the player through an interactive narrative while teaching logical concepts in an immersive and emotionally resonant way."
+    },
+    media: [
+      { type: "image", src: theLoveCode2, alt: { PT: "Elementos de storytelling", EN: "Storytelling elements" } },
+      { type: "image", src: theLoveCode5, alt: { PT: "Interface do jogo", EN: "Game interface" } },
+      { type: "image", src: theLoveCode1, alt: { PT: "Gameplay de ritmo do The Love Code", EN: "The Love Code rhythm gameplay" } },
+      { type: "image", src: theLoveCode3, alt: { PT: "Interface do jogo", EN: "Game interface" } },
+      { type: "image", src: theLoveCode4, alt: { PT: "Interface do jogo", EN: "Game interface" } }
+    ],
+    team: [
+      { name: "Vítor Bruno", role: "iOS Developer", link: "https://www.linkedin.com/in/vitor-bruno-243975258" }
+    ],
+    liveLink: "", 
+    repoLink: "https://github.com/vino-brutor/The-Love-Code"
   }
 ];
 
