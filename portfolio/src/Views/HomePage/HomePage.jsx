@@ -96,7 +96,7 @@ const HomePage = ({ isEnglish }) => {
 
         <div className="projects-grid">
           {projectsData.map((project) => (
-            <ProjectCard project={project} isEnglish={isEnglish} />
+            <ProjectCard key={project.id} project={project} isEnglish={isEnglish} />
           ))}
         </div>
       </section>

@@ -72,7 +72,7 @@ const ProjectDetailPage = ({ isEnglish }) => {
           <div className="project-links">
             {project.liveLink && (
               <a href={project.liveLink} target="_blank" rel="noreferrer">
-                {isEnglish ? "Live Demo" : "Ver Demo"}
+                {project.liveLabel?.[lang] ?? (isEnglish ? "View on App Store" : "Ver na App Store")}
               </a>
             )}
             {project.repoLink && (

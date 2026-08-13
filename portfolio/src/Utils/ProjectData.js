@@ -45,8 +45,67 @@ import theLoveCode5 from '../assets/TheLoveCode/the love code rnaP.png'
 import theLoveCode3 from '../assets/TheLoveCode/the love code gameplay.png'
 import theLoveCode4 from '../assets/TheLoveCode/the love code ribossome.png'
 import theLoveCodeCover from '../assets/covers/theLoveCodeCover.png'
+import catfolioCover from '../assets/Catfolio/cover catfolio.png'
+import catfolio0 from '../assets/Catfolio/catfolio 0.png'
+import catfolio1 from '../assets/Catfolio/catfolio 1.png'
+import catfolio2 from '../assets/Catfolio/catfolio 2.png'
+import catfolio3 from '../assets/Catfolio/catfolio 3.png'
+import catfolio4 from '../assets/Catfolio/catfolio 4.png'
+import catfolio5 from '../assets/Catfolio/catfolio 5.png'
+import catfolio6 from '../assets/Catfolio/catfolio 6.png'
+import catfolio7 from '../assets/Catfolio/cat folio 7.png'
 
 const projectsData = [
+  {
+    id: "catfolio",
+    title: "CATFOLIO",
+    subtitle: {
+      PT: "Gatoteca: Coleção de Gatos",
+      EN: "Cat Collection"
+    },
+    tags: [
+      "SWIFT",
+      "SWIFTUI",
+      "CORE ML",
+      "FOUNDATION MODELS",
+      "MULTIPEER CONNECTIVITY",
+      "APP INTENTS",
+      "WIDGETKIT",
+      "SWIFTDATA",
+      "SPEC-DRIVEN DEVELOPMENT",
+      "GITHUB",
+      "FIGMA"
+    ],
+    cardDescription: {
+      PT: "Transforme fotos reais de gatos em cartas colecionáveis e crie um diário felino particular, uma descoberta curiosa de cada vez.",
+      EN: "Turn real cat photos into collectible cards and build a private feline diary, one curious encounter at a time."
+    },
+    coverImage: catfolioCover,
+
+    fullDescription: {
+      PT: "Catfolio — publicado no Brasil como Gatoteca — é um diário felino para descobrir, fotografar e colecionar os gatos que você encontra. A experiência transforma cada foto em uma carta personalizada: o app detecta o gato e classifica seu padrão de pelagem no próprio dispositivo, permite confirmar resultados incertos e salva cada captura na coleção. É possível registrar nome, gênero e traços de comportamento, explorar nove padrões de pelagem, desbloquear conquistas e artefatos permanentes e acompanhar o progresso por **widgets**, **Siri** e Atalhos. Desenvolvido nativamente com **Swift**, **SwiftUI**, **Core ML**, **Foundation Models**, **MultipeerConnectivity**, **App Intents**, **WidgetKit** e **SwiftData**, o projeto também adotou **Spec-Driven Development**, **GitHub** e **Figma** em seu processo. O diário fica armazenado localmente e a experiência principal não exige conta nem nuvem.",
+      EN: "Catfolio is a playful feline diary for discovering, photographing, and collecting the cats you meet. Each photo becomes a personalized card: the app detects the cat and classifies its coat pattern on-device, lets you confirm uncertain results, and saves every capture to your collection. You can add a name, gender, and behavior traits, explore nine coat patterns, unlock achievements and permanent artifacts, and track progress through **widgets**, **Siri**, and Shortcuts. Built natively with **Swift**, **SwiftUI**, **Core ML**, **Foundation Models**, **MultipeerConnectivity**, **App Intents**, **WidgetKit**, and **SwiftData**, the project also used **Spec-Driven Development**, **GitHub**, and **Figma** throughout its process. The diary is stored locally, and the core experience requires no account or cloud service."
+    },
+    media: [
+      { type: "image", src: catfolio0, alt: { PT: "Tela inicial da Gatoteca", EN: "Catfolio home screen" } },
+      { type: "image", src: catfolio1, alt: { PT: "Captura de um gato para criar uma carta", EN: "Capturing a cat to create a card" } },
+      { type: "image", src: catfolio2, alt: { PT: "Classificação do padrão de pelagem", EN: "Coat pattern classification" } },
+      { type: "image", src: catfolio3, alt: { PT: "Carta colecionável personalizada", EN: "Personalized collectible card" } },
+      { type: "image", src: catfolio4, alt: { PT: "Diário com os gatos registrados", EN: "Diary of captured cats" } },
+      { type: "image", src: catfolio5, alt: { PT: "Coleção de padrões de pelagem", EN: "Coat pattern collection" } },
+      { type: "image", src: catfolio6, alt: { PT: "Conquistas e progresso da coleção", EN: "Collection achievements and progress" } },
+      { type: "image", src: catfolio7, alt: { PT: "Detalhes de um gato na Gatoteca", EN: "Cat details in Catfolio" } }
+    ],
+    team: [
+      { name: "Vitor Bruno", role: "iOS Developer & Creator", link: "https://www.linkedin.com/in/vitor-bruno-243975258" }
+    ],
+    liveLink: "https://apps.apple.com/br/app/gatoteca-cole%C3%A7%C3%A3o-de-gatos/id6796064208",
+    liveLabel: {
+      PT: "Ver na App Store",
+      EN: "View on App Store"
+    },
+    repoLink: ""
+  },
   {
     id: "enquadra", 
     title: "ENQUADRA",
@@ -110,7 +169,6 @@ const projectsData = [
       { name: "Vitor Bruno", role: "Developer", link: "https://www.linkedin.com/in/vitor-bruno-243975258" }
     ],
     liveLink: "https://apps.apple.com/br/app/runicorn/id6760668892",
-    repoLink: "https://github.com/vino-brutor/Runicorn"
   },
   {
     id: "dopamine-news",
@@ -148,7 +206,6 @@ const projectsData = [
       { name: "Vítor Bruno", role: "Developer", link: "https://www.linkedin.com/in/vitor-bruno-243975258" },
     ], 
     liveLink: "https://apps.apple.com/br/app/dopamine-news/id6755773697",
-    repoLink: "https://github.com/orgs/VerbeteApp/repositories"
   },
   {
     id: "completeness",
@@ -221,7 +278,6 @@ const projectsData = [
       { name: "Vitor Bruno", role: "Developer", link: "https://www.linkedin.com/in/vitor-bruno-243975258" }
     ],
     liveLink: "https://apps.apple.com/br/app/food-swap/id6747597054",
-    repoLink: "https://github.com/vino-brutor/Food-Swap"
   },
 
   {
@@ -252,7 +308,6 @@ const projectsData = [
     team: [
       { name: "Vitor Bruno", role: "Fullstack Developer", link: "https://www.linkedin.com/in/vitor-bruno-243975258" }
     ],
-    liveLink: "",
     repoLink: "https://github.com/vino-brutor/ProtozoaIdentifier-Front"
   },
 {
@@ -283,7 +338,6 @@ const projectsData = [
     team: [
       { name: "Vítor Bruno", role: "iOS Developer", link: "https://www.linkedin.com/in/vitor-bruno-243975258" }
     ],
-    liveLink: "", 
     repoLink: "https://github.com/vino-brutor/The-Love-Code"
   }
 ];
