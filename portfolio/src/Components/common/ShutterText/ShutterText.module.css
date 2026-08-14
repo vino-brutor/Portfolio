@@ -1,0 +1,67 @@
+.root {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  color: var(--text-white);
+}
+
+.accent {
+  color: var(--purple-neon);
+}
+
+.accent .mainCharacter {
+  text-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+}
+
+.line {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.character {
+  position: relative;
+  display: inline-block;
+  padding-inline: 0.1vw;
+}
+
+.sliceMask {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.mainCharacter,
+.slice {
+  display: inline-block;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+.slice {
+  position: absolute;
+  inset: 0;
+  text-shadow: none;
+}
+
+.topSlice,
+.bottomSlice {
+  color: var(--purple-light);
+}
+
+.topSlice {
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+}
+
+.middleSlice {
+  color: var(--text-white);
+  clip-path: polygon(0 35%, 100% 35%, 100% 65%, 0 65%);
+}
+
+.bottomSlice {
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+}

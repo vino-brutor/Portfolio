@@ -292,10 +292,26 @@ html {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
+.skill-categories {
+  display: grid;
+  gap: 3.5rem;
+}
+
+.skill-category-title {
+  color: var(--text-white);
+  font-size: 1rem;
+  letter-spacing: 0.16em;
+  margin: 0 0 1.25rem;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   gap: 1.5rem;
+}
+
+.skill-category-web .skills-grid {
+  grid-template-columns: repeat(3, minmax(225px, 1fr));
 }
 
 .skill-mini-card {
@@ -359,17 +375,45 @@ html {
 
 .big-footer-section {
   width: 100%;
-  padding: 8rem 2rem 4rem;
-  scroll-margin-top: 100px;
+  min-height: 100svh;
+  padding: 4rem 2rem;
+  scroll-margin-top: 0;
   background-color: var(--bg-dark);
+  display: flex;
+  align-items: center;
 }
 
 .footer-container {
   max-width: 1600px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 6rem;
+}
+
+.big-footer-section .contact-content,
+.big-footer-section .footer-bottom {
+  opacity: 0;
+  transform: translateY(2.5rem);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.big-footer-section .footer-links {
+  opacity: 0;
+  transform: translateX(2.5rem);
+  transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
+}
+
+.big-footer-section.is-visible .contact-content,
+.big-footer-section.is-visible .footer-bottom,
+.big-footer-section.is-visible .footer-links {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.big-footer-section.is-visible .footer-bottom {
+  transition-delay: 0.35s;
 }
 
 .massive-title {
@@ -380,11 +424,6 @@ html {
   color: var(--text-white);
   margin: 0;
   text-transform: uppercase;
-}
-
-.purple-text {
-  color: var(--purple-neon);
-  text-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
 }
 
 .footer-bottom {
@@ -452,7 +491,7 @@ html {
 .experience-section {
   max-width: 1000px; 
   margin: 0 auto;
-  padding: 2rem 2rem 10rem 2rem;
+  padding: 2rem 2rem 1rem;
   scroll-margin-top: 100px;
 }
 
@@ -562,6 +601,14 @@ html {
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   }
 
+  .skill-category-web .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  }
+
+  .skill-categories {
+    gap: 2.5rem;
+  }
+
   .navbar {
     padding: 1rem;
     flex-wrap: wrap; 
@@ -592,8 +639,16 @@ html {
     font-size: 3rem;
   }
 
+  .big-footer-section {
+    padding: 3rem 1rem;
+  }
+
+  .footer-container {
+    gap: 4rem;
+  }
+
   .experience-section {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 1rem;
   }
   
   .timeline-card {
@@ -602,5 +657,15 @@ html {
 
   .exp-title {
     font-size: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .big-footer-section .contact-content,
+  .big-footer-section .footer-bottom,
+  .big-footer-section .footer-links {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

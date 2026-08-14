@@ -47,8 +47,8 @@ const App = () => {
         
         <div className="nav-links">
           <Link to="/#projects">{isEnglish ? 'PROJECTS' : 'PROJETOS'}</Link>
-          <Link to="/#skills">{isEnglish ? 'SKILLS' : 'HABILIDADES'}</Link>
           <a href="#experience">{isEnglish ? 'EXPERIENCE' : 'EXPERIÊNCIA'}</a>
+          <Link to="/#skills">{isEnglish ? 'SKILLS' : 'HABILIDADES'}</Link>
           <Link to="/#contact">{isEnglish ? 'CONTACT' : 'CONTATO'}</Link>
         </div>
 

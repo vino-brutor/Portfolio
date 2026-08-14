@@ -1,6 +1,7 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { useLocation } from "react-router-dom"
 import ProjectCard from "../../Components/ProjectCard/ProjectCard"
+import ShutterText from "../../Components/common/ShutterText/ShutterText"
 import projectsData from "../../Utils/ProjectData"
 import meImage from "../../assets/me.png"
 import gitHubIconSkill from "../../assets/githubSkillsIcon-com.svg"
@@ -9,6 +10,8 @@ import experiencesData from "../../Utils/ExperienceData"
 
 const HomePage = ({ isEnglish }) => {
   const location = useLocation();
+  const contactSectionRef = useRef(null);
+  const [isContactVisible, setIsContactVisible] = useState(false);
 
   useEffect(() => {
     if (!location.hash) return;
@@ -22,60 +25,103 @@ const HomePage = ({ isEnglish }) => {
     }
   }, [location.hash]);
 
-  const mySkills = [
-    {
-      name: "Swift | SwiftUI | UIKit",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg",
-    },
-    {
-      name: "Flutter",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-plain.svg",
-    },
-    {
-      name: "React",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-    },
-    {
-      name: "Node.js",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
-    },
-    {
-      name: "HTML",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
-    },
-    {
-      name: "CSS",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
-    },
-    {
-      name: "JavaScript",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-    },
-    {
-      name: "TypeScript",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
-    },
-    {
-      name: "Python",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-    },
-    {
-      name: "Figma",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
-    },
-    {
-      name: "GitHub",
-      icon: gitHubIconSkill,
-    },
-    {
-      name: "SQL",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg",
-    },
-    {
-      name: "Power BI",
-      icon: powerbiIcon,
-    },
+  useEffect(() => {
+    const contactSection = contactSectionRef.current;
 
+    if (!contactSection) return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsContactVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.2 },
+    );
+
+    observer.observe(contactSection);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const skillCategories = [
+    {
+      id: "mobile",
+      title: isEnglish ? "MOBILE" : "MOBILE",
+      skills: [
+        {
+          name: "Swift | SwiftUI | UIKit",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg",
+        },
+        {
+          name: "Flutter",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-plain.svg",
+        },
+      ],
+    },
+    {
+      id: "web",
+      title: "WEB",
+      skills: [
+        {
+          name: "React",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+        },
+        {
+          name: "Node.js",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+        },
+        {
+          name: "HTML",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+        },
+        {
+          name: "CSS",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+        },
+        {
+          name: "JavaScript",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+        },
+        {
+          name: "TypeScript",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+        },
+      ],
+    },
+    {
+      id: "data-ai",
+      title: isEnglish ? "DATA & AI" : "DADOS E IA",
+      skills: [
+        {
+          name: "Python",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+        },
+        {
+          name: "SQL",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg",
+        },
+        {
+          name: "Power BI",
+          icon: powerbiIcon,
+        },
+      ],
+    },
+    {
+      id: "design-tools",
+      title: isEnglish ? "DESIGN & TOOLS" : "DESIGN E FERRAMENTAS",
+      skills: [
+        {
+          name: "Figma",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
+        },
+        {
+          name: "GitHub",
+          icon: gitHubIconSkill,
+        },
+      ],
+    },
   ];
 
   const renderGlitcheWord = (word) => {
@@ -116,23 +162,6 @@ const HomePage = ({ isEnglish }) => {
         </div>
       </section>
 
-      <section id="skills" className="skills-section">
-        <h2 className="section-title">
-          {isEnglish ? "SKILLS" : "HABILIDADES"}
-        </h2>
-
-        <div className="skills-large-card">
-          <div className="skills-grid">
-            {mySkills.map((skill) => (
-              <div className="skill-mini-card" key={skill.name}>
-                <img src={skill.icon} alt={skill.name} className="skill-icon" />
-                <div className="skill-name">{skill.name}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id="experience" className="experience-section">
         <h2 className="section-title">
           {isEnglish ? "EXPERIENCE" : "EXPERIÊNCIA"}
@@ -160,12 +189,43 @@ const HomePage = ({ isEnglish }) => {
         </div>
       </section>
 
-      <section id="contact" className="big-footer-section">
+      <section id="skills" className="skills-section">
+        <h2 className="section-title">
+          {isEnglish ? "SKILLS" : "HABILIDADES"}
+        </h2>
+
+        <div className="skills-large-card">
+          <div className="skill-categories">
+            {skillCategories.map((category) => (
+              <section className={`skill-category skill-category-${category.id}`} key={category.id}>
+                <h3 className="skill-category-title">{category.title}</h3>
+                <div className="skills-grid">
+                  {category.skills.map((skill) => (
+                    <div className="skill-mini-card" key={skill.name}>
+                      <img src={skill.icon} alt={skill.name} className="skill-icon" />
+                      <div className="skill-name">{skill.name}</div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        ref={contactSectionRef}
+        className={`big-footer-section ${isContactVisible ? "is-visible" : ""}`}
+      >
         <div className="footer-container"> 
           <div className="contact-content">
           <h2 className="massive-title">
-            {isEnglish ? "CONTACT ME" : "ENTRE EM"} <br />            
-            <span className="purple-text">{isEnglish ? "LETS'S WORK." : "CONTATO."}</span><br />             
+            <ShutterText text={isEnglish ? "CONTACT ME" : "ENTRE EM"} />
+            <ShutterText
+              text={isEnglish ? "LETS'S WORK." : "CONTATO."}
+              variant="accent"
+            />
           </h2>
           
           <div className="footer-links">
