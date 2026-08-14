@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import './App.css'; // Importando o arquivo de estilos
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import HomePage from '../HomePage/HomePage';
 import ProjectDetailPage from '../ProjectDetailPage/ProjectDetailPage';
 import linkedinIcon from '../../assets/iconLinkedin.png';
@@ -13,6 +13,15 @@ const App = () => {
 
   const toogleLanguage = () => {
     setIsEnglish(!isEnglish)
+  }
+
+  const handleLegacySectionLink = (event) => {
+    const link = event.target.closest('a[href^="#"]');
+
+    if (!link) return;
+
+    event.preventDefault();
+    window.location.assign(`/#${link.getAttribute('href').slice(1)}`);
   }
 
   useEffect(() => {
@@ -31,16 +40,16 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="portfolio-container">
-      <nav className="navbar">
+      <nav className="navbar" onClick={handleLegacySectionLink}>
         <div className="logo">          
             VB<span>PORTFOLIO</span>                    
         </div>
         
         <div className="nav-links">
-          <a href="#projects">{isEnglish ? 'PROJECTS' : 'PROJETOS'}</a>
-          <a href="#skills">{isEnglish ? 'SKILLS' : 'HABILIDADES'}</a>
+          <Link to="/#projects">{isEnglish ? 'PROJECTS' : 'PROJETOS'}</Link>
+          <Link to="/#skills">{isEnglish ? 'SKILLS' : 'HABILIDADES'}</Link>
           <a href="#experience">{isEnglish ? 'EXPERIENCE' : 'EXPERIÊNCIA'}</a>
-          <a href="#contact">{isEnglish ? 'CONTACT' : 'CONTATO'}</a>
+          <Link to="/#contact">{isEnglish ? 'CONTACT' : 'CONTATO'}</Link>
         </div>
 
         <div className='nav-buttons'>  

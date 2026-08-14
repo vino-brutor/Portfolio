@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { useLocation } from "react-router-dom"
 import ProjectCard from "../../Components/ProjectCard/ProjectCard"
 import projectsData from "../../Utils/ProjectData"
 import meImage from "../../assets/me.png"
@@ -7,6 +8,20 @@ import powerbiIcon from "../../assets/power-bi-icon.svg"
 import experiencesData from "../../Utils/ExperienceData"
 
 const HomePage = ({ isEnglish }) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const section = document.getElementById(location.hash.slice(1));
+
+    if (section) {
+      requestAnimationFrame(() => {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  }, [location.hash]);
+
   const mySkills = [
     {
       name: "Swift | SwiftUI | UIKit",

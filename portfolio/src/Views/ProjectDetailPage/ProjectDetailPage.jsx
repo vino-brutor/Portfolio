@@ -119,6 +119,20 @@ const ProjectDetailPage = ({ isEnglish }) => {
                   />
                 );
               }
+              if (item.type === "video") {
+                return (
+                  <video
+                    key={index}
+                    className="gallery-item"
+                    controls
+                    preload="metadata"
+                    aria-label={item.alt[lang]}
+                  >
+                    <source src={item.src} type="video/mp4" />
+                    {isEnglish ? "Your browser does not support video playback." : "Seu navegador não suporta reprodução de vídeo."}
+                  </video>
+                );
+              }
               return null;
             })}
         </div>

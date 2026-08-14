@@ -54,8 +54,39 @@ import catfolio4 from '../assets/Catfolio/catfolio 4.png'
 import catfolio5 from '../assets/Catfolio/catfolio 5.png'
 import catfolio6 from '../assets/Catfolio/catfolio 6.png'
 import catfolio7 from '../assets/Catfolio/cat folio 7.png'
+import flutterAIMentorCover from '../assets/flutterAIMentor/flutter ai mentor cover.png'
+import flutterAIMentor1 from '../assets/flutterAIMentor/ai mentor 1.jpeg'
+import flutterAIMentor2 from '../assets/flutterAIMentor/ai mentor 2.jpeg'
+import flutterAIMentorVideo from '../assets/flutterAIMentor/linkedin-video.mp4'
 
 const projectsData = [
+  {
+    id: "flutter-ai-mentor",
+    title: "FLUTTER AI MENTOR",
+    subtitle: {
+      PT: "Mentor de Flutter com IA",
+      EN: "AI-Powered Flutter Mentor"
+    },
+    tags: ["FLUTTER", "DART", "GEMINI API", "PROVIDER", "MARKDOWN", "AI"],
+    cardDescription: {
+      PT: "Um mentor de Flutter com IA para tirar dúvidas de código, explicar arquitetura e transformar a prática de desenvolvimento em uma conversa didática.",
+      EN: "An AI-powered Flutter mentor that answers coding questions, explains architecture, and turns development practice into a guided conversation."
+    },
+    coverImage: flutterAIMentorCover,
+    fullDescription: {
+      PT: "O **Flutter AI Mentor** é um aplicativo de chat inteligente que atua como um mentor sênior de Flutter. A experiência foi pensada para ajudar estudantes e desenvolvedores a esclarecer dúvidas de código, compreender boas práticas de arquitetura e evoluir nos estudos por meio de respostas didáticas. Desenvolvido com **Flutter** e **Dart**, o app integra a **API Gemini** pelo Google Generative AI SDK, mantém o contexto da conversa com histórico de mensagens e utiliza **Provider** para o gerenciamento de estado. As respostas aceitam **Markdown** com destaque de sintaxe para códigos Dart e Flutter, enquanto indicadores de carregamento, tratamento de erros e variáveis de ambiente com **Flutter Dotenv** completam a experiência.",
+      EN: "**Flutter AI Mentor** is an intelligent chat app designed to act as a senior Flutter mentor. It helps students and developers answer coding questions, understand architecture best practices, and make progress through clear, educational responses. Built with **Flutter** and **Dart**, it integrates the **Gemini API** through the Google Generative AI SDK, preserves conversation context through chat history, and uses **Provider** for state management. Responses support **Markdown** with syntax highlighting for Dart and Flutter code, while loading states, error handling, and environment variables via **Flutter Dotenv** round out the experience."
+    },
+    media: [
+      { type: "video", src: flutterAIMentorVideo, alt: { PT: "Demonstração do Flutter AI Mentor", EN: "Flutter AI Mentor demonstration" } },
+      { type: "image", src: flutterAIMentor1, alt: { PT: "Conversa com o mentor de Flutter", EN: "Conversation with the Flutter mentor" } },
+      { type: "image", src: flutterAIMentor2, alt: { PT: "Resposta com código formatado", EN: "Response with formatted code" } }
+    ],
+    team: [
+      { name: "Vitor Bruno", role: "Flutter Developer & Creator", link: "https://www.linkedin.com/in/vitor-bruno-243975258" }
+    ],
+    repoLink: "https://github.com/vino-brutor/flutter_AIMentor"
+  },
   {
     id: "catfolio",
     title: "CATFOLIO",
