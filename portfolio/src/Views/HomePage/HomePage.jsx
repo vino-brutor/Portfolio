@@ -11,7 +11,12 @@ import experiencesData from "../../Utils/ExperienceData"
 const HomePage = ({ isEnglish }) => {
   const location = useLocation();
   const contactSectionRef = useRef(null);
+  const skillPointerStartRef = useRef(null);
   const [isContactVisible, setIsContactVisible] = useState(false);
+  const [activeSkillIndex, setActiveSkillIndex] = useState(0);
+  const [isSkillsHovered, setIsSkillsHovered] = useState(false);
+  const [isSkillsFocused, setIsSkillsFocused] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
     if (!location.hash) return;
@@ -43,6 +48,16 @@ const HomePage = ({ isEnglish }) => {
     observer.observe(contactSection);
 
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const syncMotionPreference = () => setPrefersReducedMotion(motionPreference.matches);
+
+    syncMotionPreference();
+    motionPreference.addEventListener("change", syncMotionPreference);
+
+    return () => motionPreference.removeEventListener("change", syncMotionPreference);
   }, []);
 
   const skillCategories = [
@@ -124,6 +139,53 @@ const HomePage = ({ isEnglish }) => {
     },
   ];
 
+  const skillItems = skillCategories.flatMap((category) =>
+    category.skills.map((skill) => ({
+      ...skill,
+      category: category.title,
+    })),
+  );
+
+  useEffect(() => {
+    if (isSkillsHovered || isSkillsFocused || prefersReducedMotion) return undefined;
+
+    const autoAdvance = window.setInterval(() => {
+      setActiveSkillIndex((currentIndex) => (currentIndex + 1) % skillItems.length);
+    }, 2200);
+
+    return () => window.clearInterval(autoAdvance);
+  }, [isSkillsHovered, isSkillsFocused, prefersReducedMotion, skillItems.length]);
+
+  const moveSkillsCarousel = (direction) => {
+    setActiveSkillIndex((currentIndex) =>
+      (currentIndex + direction + skillItems.length) % skillItems.length,
+    );
+  };
+
+  const getSkillOffset = (index) => {
+    let offset = index - activeSkillIndex;
+    const half = skillItems.length / 2;
+
+    if (offset > half) offset -= skillItems.length;
+    if (offset < -half) offset += skillItems.length;
+
+    return offset;
+  };
+
+  const handleSkillPointerDown = (event) => {
+    skillPointerStartRef.current = event.clientX;
+  };
+
+  const handleSkillPointerUp = (event) => {
+    if (skillPointerStartRef.current === null) return;
+
+    const dragDistance = event.clientX - skillPointerStartRef.current;
+    skillPointerStartRef.current = null;
+
+    if (Math.abs(dragDistance) < 36) return;
+    moveSkillsCarousel(dragDistance > 0 ? -1 : 1);
+  };
+
   const renderGlitcheWord = (word) => {
     return word.split("").map((char, index) => (
       <span key={index} className={"glitch-char glitch-char-" + (index + 1)}>
@@ -194,21 +256,78 @@ const HomePage = ({ isEnglish }) => {
           {isEnglish ? "SKILLS" : "HABILIDADES"}
         </h2>
 
-        <div className="skills-large-card">
-          <div className="skill-categories">
-            {skillCategories.map((category) => (
-              <section className={`skill-category skill-category-${category.id}`} key={category.id}>
-                <h3 className="skill-category-title">{category.title}</h3>
-                <div className="skills-grid">
-                  {category.skills.map((skill) => (
-                    <div className="skill-mini-card" key={skill.name}>
-                      <img src={skill.icon} alt={skill.name} className="skill-icon" />
-                      <div className="skill-name">{skill.name}</div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            ))}
+        <div
+          className="skills-carousel"
+          onMouseEnter={() => setIsSkillsHovered(true)}
+          onMouseLeave={() => setIsSkillsHovered(false)}
+          onFocusCapture={() => setIsSkillsFocused(true)}
+          onBlurCapture={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget)) {
+              setIsSkillsFocused(false);
+            }
+          }}
+        >
+          <div
+            className="skills-coverflow"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label={isEnglish ? "Technology skills" : "Habilidades em tecnologia"}
+            tabIndex="0"
+            onKeyDown={(event) => {
+              if (event.key === "ArrowLeft") moveSkillsCarousel(-1);
+              if (event.key === "ArrowRight") moveSkillsCarousel(1);
+            }}
+            onPointerDown={handleSkillPointerDown}
+            onPointerUp={handleSkillPointerUp}
+            onPointerCancel={() => {
+              skillPointerStartRef.current = null;
+            }}
+          >
+            {skillItems.map((skill, index) => {
+              const offset = getSkillOffset(index);
+              const distance = Math.abs(offset);
+              const isActive = offset === 0;
+              const isVisible = distance <= 4;
+
+              return (
+                <button
+                  type="button"
+                  className={`skill-cover ${isActive ? "is-active" : ""}`}
+                  key={skill.name}
+                  style={{
+                    "--skill-offset": offset,
+                    "--skill-distance": distance,
+                    "--skill-rotation": `${offset === 0 ? 0 : offset > 0 ? -48 : 48}deg`,
+                    zIndex: skillItems.length - distance,
+                  }}
+                  aria-label={`${skill.name} — ${skill.category}`}
+                  aria-current={isActive ? "true" : undefined}
+                  aria-hidden={!isVisible}
+                  tabIndex={isVisible ? 0 : -1}
+                  onClick={() => setActiveSkillIndex(index)}
+                >
+                  <img src={skill.icon} alt="" className="skill-cover-icon" />
+                  <span className="skill-cover-name">{skill.name}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="skill-caption" aria-live="polite">
+            <span>{skillItems[activeSkillIndex].category}</span>
+            <strong>{skillItems[activeSkillIndex].name}</strong>
+          </div>
+
+          <div className="skills-carousel-controls">
+            <button type="button" onClick={() => moveSkillsCarousel(-1)}>
+              {isEnglish ? "PREVIOUS" : "ANTERIOR"}
+            </button>
+            <span aria-hidden="true">
+              {String(activeSkillIndex + 1).padStart(2, "0")} / {String(skillItems.length).padStart(2, "0")}
+            </span>
+            <button type="button" onClick={() => moveSkillsCarousel(1)}>
+              {isEnglish ? "NEXT" : "PRÓXIMA"}
+            </button>
           </div>
         </div>
       </section>
