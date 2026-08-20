@@ -187,11 +187,20 @@ const HomePage = ({ isEnglish }) => {
   };
 
   const renderGlitcheWord = (word) => {
-    return word.split("").map((char, index) => (
-      <span key={index} className={"glitch-char glitch-char-" + (index + 1)}>
-        {char}
+    return (
+      <span className="glitch-word" aria-label={word}>
+        {word.split("").map((char, index) => (
+          <span
+            key={index}
+            className={"glitch-char glitch-char-" + (index + 1)}
+            data-char={char}
+            aria-hidden="true"
+          >
+            <span className="glitch-char-glyph">{char}</span>
+          </span>
+        ))}
       </span>
-    ));
+    );
   };
 
   return (
