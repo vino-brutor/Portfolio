@@ -58,8 +58,48 @@ import flutterAIMentorCover from '../assets/flutterAIMentor/flutter ai mentor co
 import flutterAIMentor1 from '../assets/flutterAIMentor/ai mentor 1.jpeg'
 import flutterAIMentor2 from '../assets/flutterAIMentor/ai mentor 2.jpeg'
 import flutterAIMentorVideo from '../assets/flutterAIMentor/linkedin-video.mp4'
+import hemoAppCover from '../assets/covers/HemoApp-Cover.png'
+import hemoApp1 from '../assets/hemoapp/HemoApp1.png'
+import hemoApp2 from '../assets/hemoapp/HemoApp2.png'
+import hemoApp3 from '../assets/hemoapp/HemoApp3.png'
+import hemoApp4 from '../assets/hemoapp/HemoApp4.png'
+import hemoApp5 from '../assets/hemoapp/HemoApp5.png'
 
 const projectsData = [
+  {
+    id: "hemoapp",
+    title: "HEMOAPP",
+    subtitle: {
+      PT: "Doação de Sangue",
+      EN: "Blood Donation"
+    },
+    tags: ["SWIFT", "SWIFTUI", "MAPKIT", "GEMINI API", "SWIFTDATA", "WIDGETKIT", "USERNOTIFICATIONS", "IOS"],
+    cardDescription: {
+      PT: "Seu companheiro de doação de sangue. Acompanhe prazos, encontre hemocentros no mapa, tire dúvidas com IA e motive amigos a doar.",
+      EN: "Your blood donation companion. Track deadlines, find blood centers on the map, get AI-powered answers, and motivate friends to donate."
+    },
+    coverImage: hemoAppCover,
+    fullDescription: {
+      PT: "O **HemoApp** é um aplicativo completo para acompanhar a jornada de doação de sangue. A tela inicial exibe um timer regressivo em tempo real até a próxima doação elegível, além de estatísticas da jornada como número de doações, volume total doado e vidas salvas. O registro de doações permite salvar fotos, local (com seleção direta no mapa), volume, tipo de doação e avaliação da experiência. A aba **Doar** integra o **MapKit** para localizar hemocentros em todo o Brasil, com busca por cidade e navegação direta pelo Apple Maps. Um assistente com **IA** (via **Gemini API**) responde dúvidas sobre preparo, intervalos e critérios de doação de forma educativa. A funcionalidade social de **Amigos** cria uma rede de doação onde cada usuário visualiza o status geral dos amigos — quem está pronto para doar e quem está em período de espera. Desenvolvido nativamente com **Swift** e **SwiftUI**, o app utiliza **SwiftData** para persistência local, **WidgetKit** para widgets e **UserNotifications** para lembretes programados.",
+      EN: "**HemoApp** is a comprehensive app for tracking your blood donation journey. The home screen displays a real-time countdown timer until your next eligible donation, alongside journey statistics such as total donations, donated volume, and lives saved. The donation log lets you save photos, location (with direct map selection), volume, donation type, and experience ratings. The **Donate** tab integrates **MapKit** to locate blood centers across Brazil, with city search and direct navigation via Apple Maps. An **AI**-powered assistant (via the **Gemini API**) answers questions about preparation, intervals, and donation criteria in an educational manner. The social **Friends** feature creates a donation network where each user can view friends' general status — who is ready to donate and who is in a waiting period. Built natively with **Swift** and **SwiftUI**, the app uses **SwiftData** for local persistence, **WidgetKit** for widgets, and **UserNotifications** for scheduled reminders."
+    },
+    media: [
+      { type: "image", src: hemoApp1, alt: { PT: "Tela inicial com timer de doação", EN: "Home screen with donation timer" } },
+      { type: "image", src: hemoApp2, alt: { PT: "Registro de doação de sangue", EN: "Blood donation registration" } },
+      { type: "image", src: hemoApp3, alt: { PT: "Mapa de hemocentros", EN: "Blood center map" } },
+      { type: "image", src: hemoApp4, alt: { PT: "Assistente de IA para doação", EN: "AI donation assistant" } },
+      { type: "image", src: hemoApp5, alt: { PT: "Rede de amigos doadores", EN: "Donor friends network" } }
+    ],
+    team: [
+      { name: "Vitor Bruno", role: "iOS Developer & Creator", link: "https://www.linkedin.com/in/vitor-bruno-243975258" }
+    ],
+    liveLink: "https://apps.apple.com/br/app/hemoapp-doa%C3%A7%C3%A3o-de-sangue/id6806655987",
+    liveLabel: {
+      PT: "Ver na App Store",
+      EN: "View on App Store"
+    },
+    repoLink: ""
+  },
   {
     id: "flutter-ai-mentor",
     title: "FLUTTER AI MENTOR",
